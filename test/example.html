@@ -1,0 +1,189 @@
+ <html>
+    <head>
+        <title>Voice manager test</title>
+        <style type="text/css">
+            html, body {
+              width: 777px;
+              height: 777px;
+            }
+            div.recorder-container{
+                width: 250px;
+                height: 150px;
+                border: solid;
+                margin-left: auto;
+                margin-right: auto;
+                position: absolute;
+            }
+
+            div.audition{
+                display: none;
+                margin-left: 300px;
+                margin-bottom: 20px;
+            }
+
+            div.audition button{
+                width: 160px;
+                height: 40px;
+                background-color: #1EE485;
+                color: #382D34;
+                font-weight: bold;
+                font-size: 22px;
+            }
+            div.configuration{
+                display: none;
+            }
+            
+            button.A, button.B{
+                background: rgb(75, 108, 175);
+                color: #fff;
+                height: 35px;
+            }
+
+            div.status-info{
+                margin-left: 300px;
+                margin-bottom: 30px;
+                font-size: 25px;
+            }
+
+            span.info{
+                color: green;
+            }
+
+            div.recorder-a, div.recorder-b{
+                border: solid 1px #ccc;
+                width: 300px;
+                margin-bottom: 50px;
+                background: #e0e6e7;
+                padding: 10px;
+                float: left;
+                margin-left: 50px;
+            }
+
+            div.recorder-a{
+                margin-left: 300px;
+            }
+
+            div.player{
+                margin-top: 20px;
+            }
+
+            span{
+                margin-left: 30px;
+            }
+
+            div.controls{
+                background-color: rgb(75, 108, 175);
+                width: 121px;
+                margin-left: 2px;
+                padding-left: 10px;
+                margin-top: 20px;
+            }
+
+            ul{
+                width: 700px;
+                margin-left: 285px;
+                height: 60px;
+                background-color: #A9E4D8;
+                padding: 10px;
+            }
+
+            li{
+                float: left;
+                margin-left: 5px;
+                margin-right: 2px;
+            }
+
+            #configure{
+                width: 120px;
+                height: 40px;
+                background-color: #1EE485;
+                color: #382D34;
+                font-size: 22px;
+                margin-left: 100px;
+            }
+
+            label{
+                font-size: 16px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <button class="send">send</button>
+        <div class="recorder-container"></div>
+        <div class="status-info">
+            <span>状态信息: </span>
+            <span class="info"></span>
+        </div>
+        <div class="audition">
+            <button class="open">开启试音模式</button>
+            <button class="close">关闭试音模式</button>
+        </div>
+        <div class="configuration">
+            <ul>
+                <form onsubmit="return false;">
+                  <li>
+                    <label for="rate">Rate</label>
+                    <select id="rate" name="rate">
+                        <option value="44" >44,100 Hz</option>
+                        <option value="22" >22,050 Hz</option>
+                        <option value="11">11,025 Hz</option>
+                        <option value="8">8,000 Hz</option>
+                        <option value="5">5,512 Hz</option>
+                    </select>
+                  </li>
+
+                  <li>
+                    <label for="gain">Gain</label>
+                    <select id="gain" name="gain">
+                    </select>
+                  </li>
+
+                  <li>
+                    <label for="silenceLevel">Silence Level</label>
+                    <select id="silenceLevel" name="silenceLevel">
+                    </select>
+                  </li>
+
+                  <li>
+                    <label for="silenceTimeout">Silence Timeout</label>
+                    <input id="silenceTimeout" name="silenceTimeout" value="2000"/>
+                  </li>
+
+                  <li>
+                    <button id="configure">Configure</button>
+                  </li>
+                </form>
+            </ul>
+
+        </div>
+        
+        <div class="recorder-a">
+            <h2>Recorder A</h2>
+            <button class="A">Activate Recorder A</button>
+            <div class="player">
+                <audio src="" controls></audio>
+            </div>
+            <div class="controls">
+                <button class="start">record</button>
+                <button class="stop">stop</button>
+            </div>
+
+        </div>
+
+
+        <div class="recorder-b">
+            <h2>Recorder B</h2>
+            <button class="B">Activate Recorder B</button>
+            <div class="player">
+                <audio src="" controls></audio>
+            </div>
+            <div class="controls">
+                <button class="start">record</button>
+                <button class="stop">stop</button>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../require.js" data-main="example"></script>
+    </body>
+</html>   
